@@ -1,0 +1,301 @@
+/* reset */
+*,
+html,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* color parameters */
+:root {
+  --main-color: #F92C4E;
+  --font-color: #000;
+}
+
+/* font parameter */
+:root {
+  --main-font: 'helvetica', sans-serif;
+}
+
+/* general */
+
+.hidden {
+  display: none;
+}
+
+article {
+  /* padding:  20px; */
+}
+
+article img {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+article {
+  margin-bottom: 40px;
+}
+
+body {
+  font-family: var(--main-font);
+  padding: 0 24px;
+  width: 100%;
+}
+
+main {
+  width: 100%;
+}
+
+p {
+  color: var(--font-color);
+}
+
+a {
+  font-weight: 500;
+}
+
+p,
+a {
+  font-size: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration-line: none;
+  color: darkblue;
+}
+
+p a {
+  border-bottom: solid #ff0000 1px;
+  color: red;
+}
+
+:hover {
+  transition: all ease .3s;
+}
+
+/* Buttons */
+.butt {
+  border-radius: 4px;
+  padding: 7px 12px;
+  width: max-content;
+}
+
+.butt.primary {
+  background: #eeeeee;
+}
+
+.butt.secondary {
+  border: 1px solid #666666;
+}
+
+.butt.tertiary {}
+
+
+/* headers */
+h1 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+h1,
+h2,
+h3 {
+  width: 100%;
+}
+
+h1+p,
+h2+p,
+h3+p,
+p+p {
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+/* Menu */
+header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 32px 0;
+  position: relative;
+  border-bottom: 4px solid #ff0000;
+}
+
+header nav {
+  position: absolute;
+  width: 100%;
+  /* padding: 0 -32px; */
+  top: 100%;
+}
+
+header nav ul li {
+  background: rgb(174, 234, 252);
+  border: rgb(0, 64, 99) 1px solid;
+  padding: 32px 32px;
+
+}
+
+header nav ul li a {
+  color: var(--font-color);
+}
+
+/* Hero img Styling */
+article:first-child {
+  border-bottom: 4px #0000ff solid;
+}
+
+/* article styling nth-child(odd) nth-child(even) */
+article:nth-child(odd) {
+  background: #ffdada;
+}
+
+article:nth-child(even) {
+  background: #aaaAFf;
+}
+
+/* Section styles */
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Products advertising  Make the images png and add it wll have a #ee background*/
+.products {
+  background: #adffad;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.products a {
+  width: 50%;
+  padding: 20px;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.products img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+
+/* max-width 570 */
+@media screen and (min-width: 500px) {
+  
+
+
+  article img {
+    width: 450px;
+    height: 450px;
+  }
+
+  .products img {
+    width: 120px;
+    height:120px;
+  
+  }
+
+
+}
+
+/* max-width 700 */
+@media screen and (min-width: 700px) {
+  
+  h1,
+  h2,
+  h3,
+  p {
+    width: none;
+    max-width: 500px;
+  }
+
+  
+
+  section{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  section.hero {
+    min-height: 80vh;
+    align-items: center;
+  }
+
+  section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48%;
+  }
+
+  
+
+  article img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .products img {
+    width: 180px;
+    height:180px;
+    
+  }
+}
+
+/* max-width 900 */
+@media screen and (min-width: 900px) {
+
+  article img {
+    width: 450px;
+    height: 450px;
+  }
+
+  .products img {
+    width: 200px;
+    height:200px;
+    
+  }
+
+  html {
+    display: flex;
+    justify-content: center;
+  }
+
+  body {
+    max-width:1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    padding: 0 60px;
+  }
+
+  body article:nth-child(even) section{
+    flex-direction: row-reverse;
+  }
+
+}
